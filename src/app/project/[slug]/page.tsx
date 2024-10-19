@@ -121,3 +121,4 @@ const DynamicPage = () => {
 };
 
 export default DynamicPage;
+export const runtime = 'edge';

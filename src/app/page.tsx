@@ -14,6 +14,7 @@ export default function Home() {
     </div>
   );
 }
+export const runtime = 'edge';
 
 function desktop_view() {
   return (
