@@ -14,17 +14,23 @@ export default function Home() {
     </div>
   );
 }
+
 export const runtime = 'edge';
 
 function desktop_view() {
   return (
-    <div className="flex go-fullscreen">
-      <div className="w-golden_r_l p-14 flex flex-col justify-center ">
-        <Intro isDesktop={true} />
-      </div>
-      <div className="overflow-y-auto w-golden_r_s">
-        <div className="p-6 pl-0">
-          <CardView isDesktop={true}/>
+    <div className="overflow-y-auto">
+      <div className="flex go-fullscreen ">
+        <div className=" align-intro">
+            {/* vertical center Intro */}
+            <div className="flex flex-col justify-center h-full pl-8">
+            <Intro isDesktop={true} />
+            </div>
+        </div>
+        <div className="  align-cards">
+          <div className="  flex flex-col justify-center p-6 pl-0">
+            <CardView isDesktop={true} />
+          </div>
         </div>
       </div>
     </div>
@@ -39,7 +45,7 @@ function mobile_view() {
         <Intro isDesktop={false} />
       </div>
       <div className="w-full p-6">
-        <CardView isDesktop={false}/>
+        <CardView isDesktop={false} />
       </div>
     </div>
   );

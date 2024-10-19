@@ -40,13 +40,32 @@ body {
 
 
 .go-fullscreen {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
-  overflow: hidden;
+  /* z-index: 9999;
+  overflow: hidden; */
+  overflow: scroll;
+  position: fixed;
+
+}
+
+.align-cards {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 38.2%;
+  overflow: show;
+}
+
+.align-intro{
+  position: sticky;
+  top: 0;
+  right: 0;
+  overflow: visible;
+  width: 61.8%;
 }
 
 /* cuter scrollbar */
