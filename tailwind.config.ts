@@ -32,10 +32,6 @@ const config: Config = {
       padding: {
         px: '1px',
       },
-      width: {
-        "golden_r_s": "38.2%",
-        "golden_r_l": "61.8%",
-      },
     },
   },
   safelist: [

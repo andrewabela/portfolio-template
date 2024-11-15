@@ -1,22 +1,3 @@
-// {
-//     // Use IntelliSense to learn about possible attributes.
-//     // Hover to view descriptions of existing attributes.
-//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-//     "version": "0.2.0",
-//     "configurations": [
-//         {
-//             "type": "chrome",
-//             "request": "launch",
-//             "name": "Launch Chrome against localhost",
-//             "url": "http://localhost:8080",
-//             "webRoot": "${workspaceFolder}",
-//             // /app/bin/chrome' 'com.google.Chrome' '--profile-directory=Default'
-//             "runtimeExecutable": "/home/andrew/Applications/chrome/linux-129.0.6668.100/chrome-linux64/chrome"
-
-//         }
-//     ]
-// }
-
 {
     "version": "0.2.0",
     "configurations": [
@@ -30,8 +11,7 @@
         "name": "Next.js: debug client-side",
         "type": "chrome",
         "request": "launch",
-        "url": "http://localhost:3000",
-        "runtimeExecutable": "/home/andrew/Applications/chrome/linux-129.0.6668.100/chrome-linux64/chrome"
+        "url": "http://localhost:3000"
       },
       {
         "name": "Next.js: debug full stack",
