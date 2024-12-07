@@ -10,9 +10,9 @@ const card_view: React.FC<IntroProps> = async ({ isDesktop }) => {
   return (
     <div className='p-0 grid grid-cols-2 gap-4'>
 
-      {(await get_projects_overview()).map((project, index) => (
+      {(await get_projects_overview()).map((project) => (
 
-        <a href={`/project/${index}`} className='pointer group' key={index}>
+        <a href={`/project/${project.UID}`} className='pointer group' key={project.UID}>
           <div className={`bg-${project["card_color"]}-300 shadow-md rounded-mid p-4 h-80 group-hover:rounded-large group-hover:scale-90 transition duration-300`}>
             <Tags tags={project["tags"]} />
             {isDesktop ?
@@ -23,10 +23,7 @@ const card_view: React.FC<IntroProps> = async ({ isDesktop }) => {
             <p className='text-gray-900 lora '>{project["short_description"]}</p>
           </div>
         </a>
-
-
       ))}
-
     </div>
   );
 }

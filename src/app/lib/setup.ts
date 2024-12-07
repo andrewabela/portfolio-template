@@ -1,6 +1,6 @@
 "use server";
 
-export async function get_setup() {
+function get_setup() {
     return {
         "hostname": "https://example.com",
         "intro": "Edit src/app/lib/setup.ts to customize this portfolio template.",
@@ -20,7 +20,7 @@ export async function get_setup() {
             {
                 "name": "Unsplash",
                 "logo": "unsplash.svg",
-                "url": "https://example.com"
+                "url": "https://unsplash.com/@andrew_abela_"
             }
         ],
         "projects": [
@@ -66,51 +66,57 @@ export async function get_setup() {
 
         ],
 
+            }
 
+        ],
     }
 }
 
 export async function get_hostname() {
-    return (await get_setup()).hostname;
+    return get_setup().hostname;
 }
 
 export async function get_first_name() {
-    return (await get_setup()).first_name;
+    return get_setup().first_name;
 }
 
 export async function get_last_name() {
-    return (await get_setup()).last_name;
+    return get_setup().last_name;
 }
 
 export async function get_intro() {
-    return (await get_setup()).intro;
+    return get_setup().intro;
 }
 
 export async function get_personal_links() {
-    return (await get_setup()).personal_links;
+    return get_setup().personal_links;
 }
 
-export async function get_number_of_projects() {
-    return (await get_setup()).projects.length;
-}
+
+// export async function get_number_of_projects() {
+//     return get_setup().projects.length;
+// }
 
 export async function get_projects_overview() {
-    return (await get_setup()).projects.map(project => {
+    return get_setup().projects.map(project => {
         return {
             "name": project.name,
             "short_description": project.short_description,
             "tags": project.tags,
-            "card_color": project.card_color
+            "card_color": project.card_color,
+            "UID": project.UID
         }
     });
 }
 
-export async function get_project(id: number): Promise<string> {
-    // return get_setup().projects[id];
-    // try {
-        const data = (await get_setup()).projects[id];
-        if (data === undefined) {
-            throw new Error('Project not found');
-        }
-        return JSON.stringify(data);
+export async function get_project(UID: string): Promise<string> {
+    const project = get_setup().projects.find(project => project.UID === UID);
+    if (project === undefined) {
+        throw new Error('Project not found');
+    }
+    return JSON.stringify(project);
+}
+
+export async function get_all_projects_uids() {
+    return get_setup().projects.map(project => project.UID);
 }
