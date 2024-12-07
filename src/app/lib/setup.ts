@@ -25,6 +25,7 @@ function get_setup() {
         ],
         "projects": [
             {
+                "UID": "project_1_a_portfolio_template",
                 "name": "Portfolio Template",
                 "short_description": "An open source portfolio website template.",
                 "description": [
@@ -55,6 +56,7 @@ function get_setup() {
 
             },
             {
+                "UID": "project_2_a_demo_project",
                 "name": "Demo Project 2",
                 "short_description": "Demo Project 2 short description.",
                 "description": [
@@ -66,10 +68,8 @@ function get_setup() {
 
         ],
 
-            }
-
-        ],
     }
+
 }
 
 export async function get_hostname() {
